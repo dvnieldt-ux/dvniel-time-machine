@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0b0b">
+  <title>DVNIEL Time Machine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">DVNIEL MX PRESENTS</p>
+      <h1>TIME<br>MACHINE</h1>
+      <p class="sub">Explora grabaciones históricas reales por época y territorio.</p>
+    </header>
+
+    <section class="panel controls">
+      <label>ÉPOCA
+        <select id="decade">
+          <option value="1900">1900–1909</option><option value="1910">1910–1919</option>
+          <option value="1920" selected>1920–1929</option><option value="1930">1930–1939</option>
+          <option value="1940">1940–1949</option><option value="1950">1950–1959</option>
+        </select>
+      </label>
+      <label>TERRITORIO
+        <select id="country">
+          <option value="turkey" selected>Turquía / Anatolia</option><option value="egypt">Egipto</option>
+          <option value="greece">Grecia</option><option value="india">India</option><option value="mexico">México</option>
+          <option value="japan">Japón</option><option value="brazil">Brasil</option><option value="westafrica">África Occidental</option>
+          <option value="easterneurope">Europa Oriental</option><option value="world">Todo el mundo</option>
+        </select>
+      </label>
+      <div class="bpm-row"><label>BPM MÍN<input id="bpmMin" type="number" min="40" max="220" value="70"></label><label>BPM MÁX<input id="bpmMax" type="number" min="40" max="220" value="120"></label></div>
+      <button id="travel">VIAJAR EN EL TIEMPO</button>
+      <p class="hint">El filtro BPM se aplica a pistas ya analizadas en este dispositivo.</p>
+    </section>
+
+    <section class="panel player">
+      <div class="status"><span id="lamp"></span><span id="status">LISTO PARA VIAJAR</span></div>
+      <div class="record"><div class="grooves"></div><div class="label"><b id="year">1920s</b><small id="place">TURQUÍA</small></div></div>
+      <h2 id="title">Selecciona una época y un territorio</h2>
+      <p id="artist">Internet Archive · grabaciones históricas</p>
+      <div class="transport"><button id="prev" aria-label="Anterior">◀</button><button id="play" class="play" aria-label="Reproducir">▶</button><button id="next" aria-label="Siguiente">▶▶</button></div>
+      <audio id="audio" crossorigin="anonymous"></audio>
+      <div class="meter"><span>BPM</span><strong id="bpm">—</strong><button id="analyze">ANALIZAR</button></div>
+      <div class="actions"><button id="fav">♡ FAVORITO</button><a id="source" target="_blank" rel="noopener">VER FUENTE ↗</a></div>
+      <p id="rights" class="rights">Escuchar ≠ permiso para samplear. Consulta los derechos de cada grabación en la fuente.</p>
+    </section>
+
+    <section class="panel queue"><div class="queue-head"><h3>HALLAZGOS</h3><button id="random">ALEATORIO</button></div><div id="results"><p class="empty">Aquí aparecerán las grabaciones encontradas.</p></div></section>
+    <footer>DVNIEL TIME MACHINE · v0.1 · SOURCE: INTERNET ARCHIVE</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
